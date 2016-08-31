@@ -1,0 +1,42 @@
+{
+  "name": "tbdemo-electron",
+  "version": "1.0.0",
+  "description": "tb demo electron",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron ./app --enable-logging",
+    "dev": "NODE_ENV='development' npm run start",
+    "dist-win": "build --win --x64 --ia32",
+    "dist-osx": "build --osx --x64 --ia32",
+    "pack": "build --dir"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tboeker/tbelectrondemo.git"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "demo",
+    "tb"
+  ],
+  "author": "TB",
+  "bugs": {
+    "url": "https://github.com/tboeker/tbelectrondemo/issues"
+  },
+  "homepage": "https://github.com/tboeker/tbelectrondemo",
+  "devDependencies": {
+    "electron-builder": "^6.3.1",
+    "electron-packager": "^7.7.0",
+    "electron-prebuilt": "^1.2.0"
+  },
+  "build": {
+    "appId": "tbdemo.electron.1",
+    "app-category-type": "public.app-category.productivity",
+    "win": {
+      "iconUrl": "https://github.com/favicon.ico",
+      "remoteReleases": "true"
+    }
+  }
+}
