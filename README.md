@@ -18,6 +18,8 @@ npm run dist-win64
 npm run dist-osx
 ```
 
+"postversion": "git push && git push --tags",
+
 ## electron-builder
 
 https://www.npmjs.com/package/electron-builder
