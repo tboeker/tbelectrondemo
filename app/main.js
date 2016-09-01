@@ -55,7 +55,7 @@ function createWindow () {
   console.log('start autoUpdater. currentVersion:' + app.getVersion())
 
   // Access electrons autoUpdater
-  updater.autoUpdater
+ // updater.autoUpdater
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
