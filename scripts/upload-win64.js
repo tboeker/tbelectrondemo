@@ -1,5 +1,15 @@
 var glob = require("glob")
 var ghReleaseAssets = require('gh-release-assets')
+var publishRelease = require('publish-release')
+var pkginfo = require('pkginfo')(module, 'version','name')
+
+console.log("package version: ", module.exports.version)
+
+var tag = "v" + module.exports.version
+console.log("tag: ", tag)
+
+var releaseName = "Release " + module.exports.name + " Version: " + module.exports.version 
+console.log("releasename: ", releaseName)
 
 //var pattern = "dist/installers/win32-x64/RELEASES*"
 var pattern = "dist/installers/win32-x64/**/!(*.msi)"
@@ -53,12 +63,37 @@ glob(pattern, function (err, matches) {
     console.log("matches", matches)
 
     if (demo == false) {
-        ghReleaseAssets({
-            url: "https://github.com/tboeker/tbelectrondemo",
+        /* 
+          ghReleaseAssets({
+               url: "https://github.com/tboeker/tbelectrondemo",
+               token: token,
+               assets: matches
+           }, function (err, assets) {
+               console.log(assets)
+           }                
+           )
+           
+*/
+
+
+        publishRelease({
+            /*   owner = "tboeker",
+             repo = "tbelectrondemo",
+             tag = "v" + module.exports.version , */
             token: token,
-            assets: matches
-        }, function (err, assets) {
-            console.log(assets)
+            assets: matches,
+            owner: "tboeker",
+            repo: "tbelectrondemo",
+            tag: tag,
+            reuseRelease: true
+           // name : releaseName
+
+        }, function (err, release) {
+            // `release`: object returned from github about the newly created release
+            if (err) {
+                console.error(err)
+                throw err
+            }
         })
     }
     else {
@@ -67,18 +102,8 @@ glob(pattern, function (err, matches) {
 
     /*  matches.forEach(function (file) {
           console.log("file:", file)
-  */
-    /* publishRelease({
-         token: '2430747d4f72ccf90d61ff6e40bddbeaf99ca259',
-         assets: [file]
-
-     }, function (err, release) {
-         // `release`: object returned from github about the newly created release
-         if (err) throw err
-
-     })*/
-
-    /* })*/
+ 
+ })*/
 
 })
 

@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tboeker/tbelectrondemo.git"
+    "url": "git+https://github.com/tboeker/tbelectrondemo.git"    
   },
   "keywords": [
     "Electron",
@@ -41,7 +41,7 @@
     "fs-plus": "*",
     "rimraf": "*",
     "yargs": "*",
-    "gh-release-assets": "*"
+    "publish-release": "^1.3.1"
   },
   "build": {
     "appId": "tbdemo.electron.1",
@@ -50,5 +50,8 @@
       "iconUrl": "https://github.com/favicon.ico",
       "remoteReleases": "true"
     }
+  },
+  "dependencies": {
+ 
   }
 }
