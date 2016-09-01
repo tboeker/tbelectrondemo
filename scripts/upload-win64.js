@@ -14,8 +14,10 @@ console.log("releasename: ", releaseName)
 
 var pattern1 = "dist/installers/win32-x64/RELEASES*"
 console.log("pattern1", pattern1)
-var pattern2 = "dist/installers/win32-x64/**/*" + module.exports.version + "*"
+var pattern2 = "dist/installers/win32-x64/**/*" + module.exports.version + "*.exe"
 console.log("pattern2", pattern2)
+var pattern3 = "dist/installers/win32-x64/**/*" + module.exports.version + "*.nupkg"
+console.log("pattern3", pattern3)
 
 //var pattern = "dist/installers/win32-x64/**/!(*.msi)"
 //console.log("pattern", pattern)
@@ -56,7 +58,7 @@ else {
 }
 
 
-glob([pattern1, pattern2], function (err, matches) {
+glob([pattern1, pattern2, pattern3], function (err, matches) {
 //glob(pattern, function (err, matches) {
 
     if (err) throw err
