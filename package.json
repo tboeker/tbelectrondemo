@@ -1,18 +1,18 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "tb demo electron",
   "scripts": {
     "clean": "rimraf dist",
     "postinstall": "install-app-deps",
     "start": "electron ./app --enable-logging",
     "dev": "NODE_ENV='development' npm run start",
-    "dist-win": "build --win --x64",  
+    "dist-win": "build --win --x64",
     "dist-osx": "build --osx --x64 --ia32",
     "pack": "build --dir",
     "pack-win64": "electron-packager ./app --asar --platform win32 --arch x64 --out dist --overwrite",
     "setup-win64": "electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/win32-x64/  --config config.json --certificateFile tbdemoelectron.pfx --certificatePassword Pa$$word01",
-    "dist-win64" : "npm run clean && npm run pack-win64 && npm run setup-win64"
+    "dist-win64": "npm run clean && npm run pack-win64 && npm run setup-win64"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "electron-builder": "^6.3.1",
     "electron-packager": "^7.7.0",
     "electron-prebuilt": "^1.2.0",
-    "electron-installer-windows": "^0.2.0" ,
+    "electron-installer-windows": "^0.2.0",
     "fs-plus": "*",
     "rimraf": "*",
     "yargs": "*"
@@ -44,7 +44,7 @@
     "app-category-type": "public.app-category.productivity",
     "win": {
       "iconUrl": "https://github.com/favicon.ico",
-      "remoteReleases": "true"     
+      "remoteReleases": "true"
     }
   }
 }
