@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "tb demo electron",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -43,7 +43,7 @@
     "yargs": "*",
     "publish-release": "*",
     "multi-glob": "*",
-    "gh-release-assets" : "*"
+    "gh-release-assets": "*"
   },
   "build": {
     "appId": "tbdemo.electron.1",
