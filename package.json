@@ -9,6 +9,7 @@
     "dev": "NODE_ENV='development' npm run start",
     "prepatch-release": "cd app && npm version patch --no-git-tag-version && git commit -a -m prepatch",
     "patch-release": "npm version patch",
+    "postversion": "git push && git push --tags",
     "dist-win": "build --win --x64",
     "dist-osx": "build --osx --x64 --ia32",
     "pack": "build --dir",
