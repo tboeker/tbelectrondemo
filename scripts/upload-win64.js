@@ -1,4 +1,5 @@
-var glob = require("glob")
+//var glob = require("glob")
+var glob = require("multi-glob").glob;
 var ghReleaseAssets = require('gh-release-assets')
 var publishRelease = require('publish-release')
 var pkginfo = require('pkginfo')(module, 'version','name')
@@ -11,8 +12,14 @@ console.log("tag: ", tag)
 var releaseName = "Release " + module.exports.name + " Version: " + module.exports.version 
 console.log("releasename: ", releaseName)
 
-//var pattern = "dist/installers/win32-x64/RELEASES*"
-var pattern = "dist/installers/win32-x64/**/!(*.msi)"
+var pattern1 = "dist/installers/win32-x64/RELEASES*"
+console.log("pattern1", pattern1)
+var pattern2 = "dist/installers/win32-x64/**/*" + module.exports.version + "*"
+console.log("pattern2", pattern2)
+
+//var pattern = "dist/installers/win32-x64/**/!(*.msi)"
+//console.log("pattern", pattern)
+
 
 var demo = false;
 
@@ -49,9 +56,8 @@ else {
 }
 
 
-console.log("pattern", pattern)
-
-glob(pattern, function (err, matches) {
+glob([pattern1, pattern2], function (err, matches) {
+//glob(pattern, function (err, matches) {
 
     if (err) throw err
 

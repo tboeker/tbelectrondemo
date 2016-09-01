@@ -14,6 +14,12 @@ npm start
 #build windows
 npm run dist-win64
 
+#upload windows to github
+npm run upload-win64
+
+#create patch release
+npm run release-patch
+
 #build osx
 npm run dist-osx
 ```
