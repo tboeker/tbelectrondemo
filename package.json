@@ -15,7 +15,7 @@
     "prepack-win64": "npm run clean",
     "dist-win64": "electron-installer-windows --src dist/tbdemoelectron-win32-x64 --dest dist/installers/win32-x64 --config config.json",
     "predist-win64": " npm run pack-win64",
-    "postdist-win64": "node scripts/upload-win64.js"
+    "upload-win64": "node scripts/upload-win64.js"
   },
   "repository": {
     "type": "git",
