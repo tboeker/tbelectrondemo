@@ -41,6 +41,10 @@ electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/inst
 
 http://woshub.com/how-to-create-self-signed-certificate-with-powershell/
 
+"setup-win64": "electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/win32-x64/  --config config.json --certificateFile tbdemoelectron.pfx --certificatePassword Pa$$word01",
+    
+
+    
 ```powershell
 
 # run as administrator

@@ -4,6 +4,40 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+const GhReleases = require('electron-gh-releases')
+
+let options = {
+  repo: 'tboeker/tbelectrondemo',
+  currentVersion: app.getVersion()
+}
+
+
+const updater = new GhReleases(options)
+
+// Check for updates
+// `status` returns true if there is a new update available
+updater.check((err, status) => {
+  if (!err && status) {
+
+    console.log('updater.check. start download')
+
+    // Download the update
+    updater.download()
+
+    
+  }
+})
+
+// When an update has been downloaded
+updater.on('update-downloaded', (info) => {
+
+  console.log('updater-downloaded. start install')
+
+  // Restart the app and install the update
+  updater.install()
+})
+
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -17,6 +51,11 @@ function createWindow () {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
+
+  console.log('start autoUpdater. currentVersion:' + app.getVersion())
+
+  // Access electrons autoUpdater
+  updater.autoUpdater
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
