@@ -42,7 +42,8 @@
     "rimraf": "*",
     "yargs": "*",
     "publish-release": "*",
-    "multi-glob": "*"
+    "multi-glob": "*",
+    "gh-release-assets" : "*"
   },
   "build": {
     "appId": "tbdemo.electron.1",
