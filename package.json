@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "tb demo electron",
   "scripts": {
     "clean": "rimraf dist",
@@ -42,7 +42,7 @@
     "fs-plus": "*",
     "rimraf": "*",
     "yargs": "*",
-    "gh-release-assets":"*"
+    "gh-release-assets": "*"
   },
   "build": {
     "appId": "tbdemo.electron.1",
