@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "tb demo electron",
   "scripts": {
     "clean": "rimraf dist",
