@@ -7,7 +7,7 @@
     "postinstall": "install-app-deps",
     "start": "electron ./app --enable-logging",
     "dev": "NODE_ENV='development' npm run start",
-    "dist-win": "build --win --x64 --ia32",
+    "dist-win": "build --win --x64",  
     "dist-osx": "build --osx --x64 --ia32",
     "pack": "build --dir",
     "pack-win64": "electron-packager ./app --asar --platform win32 --arch x64 --out dist --overwrite",
