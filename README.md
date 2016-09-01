@@ -12,7 +12,7 @@ npm install
 npm start
 
 #build windows
-npm run dist-win
+npm run dist-win64
 
 #build osx
 npm run dist-osx
@@ -36,3 +36,20 @@ electron-packager ./app --asar --platform win32 --arch x64 --out dist/
 https://github.com/unindented/electron-installer-windows
 
 electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/ --remoteReleases dist/installers/ 
+
+http://woshub.com/how-to-create-self-signed-certificate-with-powershell/
+
+```powershell
+
+# run as administrator
+
+New-SelfSignedCertificate -DnsName "tbdemoelectron.tboeker.de" -CertStoreLocation "cert:\LocalMachine\My"
+
+# thumprint kopieren
+
+$CertPassword = ConvertTo-SecureString -String "Pa$$word01" -Force –AsPlainText
+
+Export-PfxCertificate -Cert cert:\LocalMachine\My\6DECDB35F2816D8229560C8AF51DEED8191A432D  -FilePath tbdemoelectron.pfx -Password $CertPassword
+
+
+```

@@ -1,9 +1,12 @@
 {
-  "name": "tbdemoelectron",  
+  "name": "tbdemoelectron",
   "version": "1.0.1",
   "description": "tb demo electron",
   "main": "main.js",
   "author": {
     "name": "tb"
+  },
+  "dependencies": {
+    "electron-gh-releases": "^2.0.4"
   }
 }
