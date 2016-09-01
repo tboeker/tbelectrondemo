@@ -1,0 +1,7 @@
+{
+  "remoteReleases": "https://github.com/tboeker/tbelectrondemo",
+  "icon": "resources/Icon.ico",
+  "tags": [
+    "Utility"
+  ]
+}
