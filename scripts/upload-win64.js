@@ -5,6 +5,15 @@ var ghReleaseAssets = require('gh-release-assets')
 var pattern = "dist/installers/win32-x64/**/!(*.msi)"
 
 
+var demo = false;
+if(process.argv.indexOf("-demo") != -1){ //does our flag exist?
+ 
+    
+    demo = process.argv[process.argv.indexOf("-demo") + 1]; //grab the next item
+    console.log("demo in args found")
+    
+}
+
 var token;
 if(process.argv.indexOf("-token") != -1){ //does our flag exist?
  
@@ -43,7 +52,8 @@ glob(pattern, function (err, matches) {
 
     console.log("matches", matches)
 
-    
+    if (demo == false)
+    {
         ghReleaseAssets({
             url: "https://github.com/tboeker/tbelectrondemo",
             token: token,
@@ -51,7 +61,10 @@ glob(pattern, function (err, matches) {
         }, function (err, assets) {
             console.log(assets)
         })
-
+    }
+    else{
+        console.log("demo, do not do");
+    }
 
   /*  matches.forEach(function (file) {
         console.log("file:", file)
