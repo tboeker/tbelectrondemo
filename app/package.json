@@ -5,9 +5,12 @@
   "description": "tb demo electron",
   "homepage": "https://github.com/tboeker/tbelectrondemo",
   "main": "main.js",
+  "dependencies": {
+    "winston": "*"   ,
+     "electron-squirrel-startup": "*",
+    "electron-gh-releases": "*" 
+  },
   "devDependencies": {
-    "electron-squirrel-startup": "*",
-    "winston": "*",
-    "electron-gh-releases": "*"
+   
   }
 }
