@@ -27,9 +27,9 @@ if (process.argv.indexOf("-demo") != -1) { //does our flag exist?
     console.log("demo in args found")
 }
 else {
-    if (process.env.GIT_DEMO != null) {
-        demo = process.env.GIT_DEMO
-        console.log("demo in env found")
+    if (process.env.GH_DEMO != null) {
+        demo = process.env.GH_DEMO
+        console.log("demo in env GH_DEMO found")
     }
 }
 
@@ -44,12 +44,12 @@ if (process.argv.indexOf("-token") != -1) { //does our flag exist?
 else {
     console.log("token not in args")
 
-    if (process.env.GIT_TOKEN == null) {
-        throw "token not in env GIT_TOKEN"
+    if (process.env.GH_TOKEN == null) {
+        throw "token not in env GH_TOKEN"
     }
     else {
-        token = process.env.GIT_TOKEN;
-        console.log("token in env found", token)
+        token = process.env.GH_TOKEN;
+        console.log("token in env GH_TOKEN found", token)
     }
 
 }

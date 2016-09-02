@@ -6,9 +6,8 @@
   "homepage": "https://github.com/tboeker/tbelectrondemo",
   "main": "main.js",
   "devDependencies": {
-    "electron-gh-releases": "*",
-    "electron-logger": "0.0.3",
-    "electron-squirrel-startup": "^1.0.0",
-    "winston": "^2.2.0"
+    "electron-squirrel-startup": "*",
+    "winston": "*",
+    "electron-gh-releases": "*"
   }
 }

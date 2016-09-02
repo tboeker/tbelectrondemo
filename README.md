@@ -2,7 +2,7 @@
 
 Demo einer Electron Anwendung
 
-* Inhalt kopiert aus dem Electron Quick Start <https://github.com/electron/electron-quick-start>
+Inhalt kopiert aus dem Electron Quick Start <https://github.com/electron/electron-quick-start>
 
 ```bash
 # Install dependencies
@@ -22,9 +22,23 @@ npm run release-patch
 
 #build osx
 npm run dist-osx
+
 ```
+## Parameter 
+
+```bash
+
+#für upload.js Führt keinen Upload durch, sonder Testet nur
+SET GH_DEMO=true
+
+#für upload.js Setzt das Token für die GitHub Auth.
+SET GH_TOKEN=XXX
+
+export GH_TOKEN=XXX
 
 
+
+``` 
 
 ## electron-builder
 
@@ -41,31 +55,8 @@ electron-packager ./app --asar --platform win32 --arch x64 --out dist/
 
 ## electron-installer-windows
 
+Die Options in packages.json.build.win sind die gleichen wie in diesem projekt???
+
 https://github.com/unindented/electron-installer-windows
 
 electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/ --remoteReleases dist/installers/ 
-
-http://woshub.com/how-to-create-self-signed-certificate-with-powershell/
-
-"setup-win64": "electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/win32-x64/  --config config.json --certificateFile tbdemoelectron.pfx --certificatePassword Pa$$word01",
-    
-
-https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6
-    
-```powershell
-
-# run as administrator
-
-New-SelfSignedCertificate -DnsName "tbdemoelectron.tboeker.de" -CertStoreLocation "cert:\LocalMachine\My"
-
-# thumprint kopieren
-
-$CertPassword = ConvertTo-SecureString -String Password01 -Force –AsPlainText
-
-Export-PfxCertificate -Cert cert:\LocalMachine\My\6DECDB35F2816D8229560C8AF51DEED8191A432D  -FilePath tbdemoelectron.pfx -Password $CertPassword
-
-
-```
-
-
-"remoteReleases": "https://github.com/tboeker/tbelectrondemo"
