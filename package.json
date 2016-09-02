@@ -34,12 +34,12 @@
   },
   "homepage": "https://github.com/tboeker/tbelectrondemo",
   "devDependencies": {
-    "electron-builder": "^6.3.1",
-    "fs-plus": "*",
-    "rimraf": "*",
-    "yargs": "*",
-    "publish-release": "*",
-    "multi-glob": "*"
+    "electron-builder": "^6.3.4",
+    "electron-prebuilt": "^1.2.0",
+    "multi-glob": "*",
+    "pkginfo": "^0.4.0",
+    "publish-release": "^1.3.2",
+    "rimraf": "*"
   },
   "build": {
     "appId": "tb.demo.electron",
