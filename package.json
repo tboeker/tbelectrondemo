@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "tb demo electron",
   "scripts": {
     "postinstall": "install-app-deps",
