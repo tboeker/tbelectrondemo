@@ -11,7 +11,7 @@
     "postversion": "git push && git push --tags",
     
     "release-patch": "npm version patch -m 'Release Patch Upgrade %s'",
-    "prerelease-patch": "cd app && npm version patch --no-git-tag-version && git commit -a -m Release Patch in App Folder",
+    "postrelease-patch": "cd app && npm version patch --no-git-tag-version && git commit -ammed",
     
     "pack-osx": "npm run compile && build --osx --x64 --ia32 --dir",
     "dist-osx": "npm run compile &&  build --osx --x64 --ia32",
