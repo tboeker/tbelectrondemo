@@ -1,13 +1,10 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "author": "TB",
   "description": "tb demo electron",
   "homepage": "https://github.com/tboeker/tbelectrondemo",
   "main": "main.js",
-  "devDependencies": {
-    "electron": "*"
-  },
   "devDependencies": {
     "electron-gh-releases": "*",
     "electron-logger": "0.0.3",
