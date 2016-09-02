@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "tb demo electron",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -31,7 +31,6 @@
     "demo",
     "tb"
   ],
-  
   "author": "TB",
   "bugs": {
     "url": "https://github.com/tboeker/tbelectrondemo/issues"
