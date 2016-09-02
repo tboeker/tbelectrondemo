@@ -7,6 +7,7 @@ const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
 
+//https://medium.com/@svilen/auto-updating-apps-for-windows-and-osx-using-electron-the-complete-guide-4aa7a50b904c#.wpoukxnlq
 if (require('electron-squirrel-startup')) {
   logger.info("electron-squirrel-startup. return");
   return;
