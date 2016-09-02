@@ -15,7 +15,10 @@
     "dist-osx": "npm run compile &&  build --osx --x64 --ia32",
     "pack-win64": "npm run compile && build --win --x64 --dir",
     "dist-win64": "npm run compile && build --win --x64",
-    "upload-win64": "node scripts/upload-win64.js"
+    "upload-win64": "node scripts/upload-win64.js",
+    "pack-win1": "electron-packager ./app --asar --platform win32 --arch x64 --out dist --overwrite",
+    "prepack-win1": "npm run clean",
+    "dist-win1": "electron-installer-windows --src dist/tbdemoelectron-win32-x64 --dest dist/installers/win32-x64 --config config.json"
   },
   "repository": {
     "type": "git",
@@ -28,24 +31,29 @@
     "demo",
     "tb"
   ],
+  
   "author": "TB",
   "bugs": {
     "url": "https://github.com/tboeker/tbelectrondemo/issues"
   },
   "homepage": "https://github.com/tboeker/tbelectrondemo",
   "devDependencies": {
-    "electron": "^1.3.4",
-    "electron-builder": "^6.3.4",
-    "electron-prebuilt": "^1.2.0",
+    "electron": "*",
+    "electron-builder": "*",
+    "electron-installer-windows": "*",
+    "electron-packager": "*",
+    "electron-prebuilt": "*",
     "multi-glob": "*",
-    "pkginfo": "^0.4.0",
-    "publish-release": "^1.3.2",
+    "pkginfo": "*",
+    "publish-release": "*",
     "rimraf": "*"
   },
   "build": {
     "appId": "tb.demo.electron",
     "category": "public.app-category.productivity",
     "win": {
+      "certificateFile": "tbdemoelectron.pfx",
+      "certificatePassword": "Password",
       "remoteReleases": "https://github.com/tboeker/tbelectrondemo"
     }
   },

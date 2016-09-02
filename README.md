@@ -50,6 +50,7 @@ http://woshub.com/how-to-create-self-signed-certificate-with-powershell/
 "setup-win64": "electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/win32-x64/  --config config.json --certificateFile tbdemoelectron.pfx --certificatePassword Pa$$word01",
     
 
+https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6
     
 ```powershell
 
@@ -59,9 +60,12 @@ New-SelfSignedCertificate -DnsName "tbdemoelectron.tboeker.de" -CertStoreLocatio
 
 # thumprint kopieren
 
-$CertPassword = ConvertTo-SecureString -String "Pa$$word01" -Force –AsPlainText
+$CertPassword = ConvertTo-SecureString -String Password01 -Force –AsPlainText
 
 Export-PfxCertificate -Cert cert:\LocalMachine\My\6DECDB35F2816D8229560C8AF51DEED8191A432D  -FilePath tbdemoelectron.pfx -Password $CertPassword
 
 
 ```
+
+
+"remoteReleases": "https://github.com/tboeker/tbelectrondemo"
