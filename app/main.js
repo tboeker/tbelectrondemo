@@ -1,22 +1,34 @@
-const logger = require('winston');  
-logger.add(logger.transports.File, { filename: "app.log" });  
+const logger = require('winston');
+logger.add(logger.transports.File, { filename: "app.log" });
 
-global.logger = logger;  
+global.logger = logger;
 
-const electron = require('electron')
+const electron = require('electron');
 // Module to control application life.
-const app = electron.app
+const app = electron.app;
+
+if (require('electron-squirrel-startup')) {
+  logger.info("electron-squirrel-startup. return");
+  return;
+}
 
 //https://github.com/electron/windows-installer#handling-squirrel-events
 // this should be placed at top of main.js to handle setup events quickly
 if (handleSquirrelEvent()) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
-  logger.info("handleSquirrelEvent. return")
+  logger.info("handleSquirrelEvent. return");
   return;
 }
-else{
-    logger.info("no handleSquirrelEvent. continue")
+else {
+  logger.info("no handleSquirrelEvent. continue");
 }
+
+//const autoUpdater = require('autoUpdater');
+const appVersion = app.getVersion();
+const os = require('os');
+
+logger.info("appVersion", appVersion);
+logger.info("os", os.platform(), os.arch(), os.release(), os.type(), os.arch());
 
 
 /*if (require('electron-squirrel-startup')) 
@@ -29,6 +41,7 @@ else{
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+/*
 const GhReleases = require('electron-gh-releases')
 
 let options = {
@@ -60,9 +73,10 @@ updater.on('update-downloaded', (info) => {
 })
 
 
-  //logger.info('start autoUpdater. currentVersion:' + app.getVersion())
-  // Access electrons autoUpdater
-  //updater.autoUpdater()
+logger.info('start autoUpdater. currentVersion:' + app.getVersion())
+ // Access electrons autoUpdater
+ updater.autoUpdater
+*/
 
 
 // This method will be called when Electron has finished
@@ -91,9 +105,9 @@ app.on('activate', function () {
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({ width: 800, height: 600 })
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
@@ -116,7 +130,7 @@ function createWindow () {
 // code. You can also put them in separate files and require them here.
 function handleSquirrelEvent() {
   if (process.argv.length === 1) {
-     logger.info(process.argv);
+    logger.info(process.argv);
     return false;
   }
 
@@ -128,18 +142,18 @@ function handleSquirrelEvent() {
   const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
   const exeName = path.basename(process.execPath);
 
-  const spawn = function(command, args) {
+  const spawn = function (command, args) {
     let spawnedProcess, error;
 
     try {
-      spawnedProcess = ChildProcess.spawn(command, args, {detached: true});
+      spawnedProcess = ChildProcess.spawn(command, args, { detached: true });
     } catch (error) {
-             logger.log('eror' , error);
+      logger.log('eror', error);
     }
     return spawnedProcess;
   };
 
-  const spawnUpdate = function(args) {
+  const spawnUpdate = function (args) {
     return spawn(updateDotExe, args);
   };
 

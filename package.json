@@ -52,8 +52,7 @@
     "category": "public.app-category.productivity",
     "win": {
       "certificateFile": "tbdemoelectron.pfx",
-      "certificatePassword": "Password",
-      "remoteReleases": "https://github.com/tboeker/tbelectrondemo"
+      "certificatePassword": "Password"
     }
   },
   "dependencies": {}

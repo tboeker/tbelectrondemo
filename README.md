@@ -57,6 +57,8 @@ electron-packager ./app --asar --platform win32 --arch x64 --out dist/
 
 Die Options in packages.json.build.win sind die gleichen wie in diesem projekt???
 
+,"remoteReleases": "https://github.com/tboeker/tbelectrondemo"
+
 https://github.com/unindented/electron-installer-windows
 
 electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/ --remoteReleases dist/installers/ 
