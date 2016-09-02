@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "tb demo electron",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -8,13 +8,10 @@
     "compile": "npm run clean",
     "start": "electron ./app --enable-logging",
     "dev": "SET NODE_ENV=development && npm run start",
-    
     "release-patch": "npm version patch -m 'Release Patch Upgrade %s'",
     "postrelease-patch": "cd app && npm version patch --no-git-tag-version && git commit -ammed && git push && git push --tags",
-    
     "pack-osx": "npm run compile && build --osx --x64 --ia32 --dir",
     "dist-osx": "npm run compile &&  build --osx --x64 --ia32",
- 
     "pack-win64": "npm run compile && build --win --x64 --dir",
     "dist-win64": "npm run compile && build --win --x64",
     "upload-win64": "node scripts/upload-win64.js"
