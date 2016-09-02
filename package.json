@@ -8,10 +8,9 @@
     "compile": "npm run clean",
     "start": "electron ./app --enable-logging",
     "dev": "SET NODE_ENV=development && npm run start",
-    "postversion": "git push && git push --tags",
     
     "release-patch": "npm version patch -m 'Release Patch Upgrade %s'",
-    "postrelease-patch": "cd app && npm version patch --no-git-tag-version && git commit -ammed",
+    "postrelease-patch": "cd app && npm version patch --no-git-tag-version && git commit -ammed && git push && git push --tags",
     
     "pack-osx": "npm run compile && build --osx --x64 --ia32 --dir",
     "dist-osx": "npm run compile &&  build --osx --x64 --ia32",
