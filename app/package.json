@@ -1,16 +1,14 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "author": "TB",
   "description": "tb demo electron",
   "homepage": "https://github.com/tboeker/tbelectrondemo",
   "main": "main.js",
   "dependencies": {
-    "winston": "*"   ,
-     "electron-squirrel-startup": "*",
-    "electron-gh-releases": "*" 
+    "winston": "*",
+    "electron-squirrel-startup": "*",
+    "electron-gh-releases": "*"
   },
-  "devDependencies": {
-   
-  }
+  "devDependencies": {}
 }
