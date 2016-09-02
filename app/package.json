@@ -1,10 +1,6 @@
 {
   "name": "tbdemoelectron",
-<<<<<<< HEAD
   "version": "1.0.28",
-=======
-  "version": "1.0.23",
->>>>>>> 94665ed075c094f7bfe3a658eae04b20d24115cb
   "author": "TB",
   "description": "tb demo electron",
   "homepage": "https://github.com/tboeker/tbelectrondemo",
