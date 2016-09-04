@@ -40,7 +40,7 @@
     "electron": "*",
     "electron-builder": "*",
     "electron-installer-windows": "*",
-    "electron-packager": "*",
+    "electron-packager": "^8.0.0",
     "electron-prebuilt": "*",
     "multi-glob": "*",
     "pkginfo": "*",
