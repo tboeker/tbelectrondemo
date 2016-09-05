@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.37",
+  "version": "1.0.36",
   "description": "tb demo electron",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -13,10 +13,9 @@
     "release-patch": "npm version patch -m \"Release Patch Upgrade %s\"",
     "pack-osx": "npm run compile && build --osx --x64 --ia32 --dir",
     "dist-osx": "npm run compile &&  build --osx --x64 --ia32",
-    
-    "pack-win" : "npm run compile && node scripts/pack-win.js",
+    "pack-win": "npm run compile && node scripts/pack-win.js",
     "dist-win64": "npm run pack-win && node scripts/dist-win64.js",
-    "upload-win64": "node scripts/upload-win64.js"    
+    "upload-win64": "node scripts/upload-win64.js"
   },
   "repository": {
     "type": "git",
@@ -56,8 +55,11 @@
     }
   },
   "dependencies": {
-    "winston": "*",
+    "electron-gh-releases": "*",
+    "electron-plugins": "^0.1.0",
     "electron-squirrel-startup": "*",
-    "electron-gh-releases": "*"
+    "electron-updater": "^0.3.1",
+    "winston": "*",
+    "auto-updater" :"*"
   }
 }

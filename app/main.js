@@ -7,6 +7,8 @@ const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
 
+app.setAppUserModelId("tb.demo.electron");
+
 //https://medium.com/@svilen/auto-updating-apps-for-windows-and-osx-using-electron-the-complete-guide-4aa7a50b904c#.wpoukxnlq
 if (require('electron-squirrel-startup')) {
   logger.info("electron-squirrel-startup. return");
@@ -24,7 +26,7 @@ else {
   logger.info("no handleSquirrelEvent. continue");
 }
 
-//const autoUpdater = require('autoUpdater');
+
 const appVersion = app.getVersion();
 const os = require('os');
 
@@ -32,12 +34,30 @@ logger.info("appVersion", appVersion);
 logger.info("os", os.platform(), os.arch(), os.release(), os.type(), os.arch());
 
 
-/*if (require('electron-squirrel-startup')) 
-{
-  logger.info("require electron-squirrel-startup. return")
-  return
-};
-*/
+const autoUpdater = require('autoUpdater');
+
+var feedUrl = 'http://localhost:6001/?version=' + app.getVersion();
+autoUpdater.setFeedURL("http://localhost:6001/");
+
+autoUpdater.on('error', function(err) {  
+  logger.info("error", err);
+});
+
+autoUpdater.on('checking-for-update', function() {  
+    logger.info("autoupdater" , "checking-for-update")
+});
+
+autoUpdater.on('update-available', function() {
+  logger.info("autoupdater" , "update-available")  
+});
+
+autoUpdater.on('update-not-available', function() {
+  logger.info("autoupdater" , "update-not-available")  
+});
+
+autoUpdater.on('update-downloaded', function(x) {
+  logger.info("autoupdater" , "update-downloaded")  
+});
 
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
@@ -79,6 +99,8 @@ logger.info('start autoUpdater. currentVersion:' + app.getVersion())
  updater.autoUpdater
 */
 
+logger.info("autoUpdater", "checkForUpdates")
+autoUpdater.checkForUpdates()
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
