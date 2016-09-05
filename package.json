@@ -42,6 +42,7 @@
     "electron-installer-windows": "*",
     "electron-packager": "^8.0.0",
     "electron-prebuilt": "*",
+    "electron-winstaller": "^2.3.4",
     "multi-glob": "*",
     "pkginfo": "*",
     "publish-release": "*",
