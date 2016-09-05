@@ -10,11 +10,11 @@ console.log("tag: ", tag)
 var releaseName = "Release " + module.exports.name + " Version: " + module.exports.version
 console.log("releasename: ", releaseName)
 
-var pattern1 = "dist/win/RELEASES*"
+var pattern1 = "dist/installer/win32-x64/RELEASES*"
 console.log("pattern1", pattern1)
-var pattern2 = "dist/win/**/*" + module.exports.version + "*.exe"
+var pattern2 = "dist/installer/win32-x64/**/*" + module.exports.version + "*.exe"
 console.log("pattern2", pattern2)
-var pattern3 = "dist/win/**/*" + module.exports.version + "*.nupkg"
+var pattern3 = "dist/installer/win32-x64/**/*" + module.exports.version + "*.nupkg"
 console.log("pattern3", pattern3)
 
 //var pattern = "dist/installers/win32-x64/**/!(*.msi)"
