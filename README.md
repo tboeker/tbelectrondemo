@@ -56,6 +56,10 @@ https://github.com/electron-userland/electron-packager
 
 electron-packager ./app --asar --platform win32 --arch x64 --out dist/
 
+## electron-installer
+
+https://github.com/electron/windows-installer
+
 ## electron-installer-windows
 
 Die Options in packages.json.build.win sind die gleichen wie in diesem projekt???

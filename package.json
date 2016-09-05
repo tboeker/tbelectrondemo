@@ -13,12 +13,10 @@
     "release-patch": "npm version patch -m \"Release Patch Upgrade %s\"",
     "pack-osx": "npm run compile && build --osx --x64 --ia32 --dir",
     "dist-osx": "npm run compile &&  build --osx --x64 --ia32",
-    "pack-win64": "npm run compile && build --win --x64 --dir",
-    "dist-win64": "npm run compile && build --win --x64",
-    "upload-win64": "node scripts/upload-win64.js",
-    "pack-win1": "electron-packager ./app --asar --platform win32 --arch x64 --out dist --overwrite",
-    "prepack-win1": "npm run clean",
-    "dist-win1": "electron-installer-windows --src dist/tbdemoelectron-win32-x64 --dest dist/installers/win32-x64 --config config.json"
+    
+    "pack-win" : "npm run compile && node scripts/pack-win.js",
+    "dist-win64": "npm run pack-win && node scripts/dist-win64.js",
+    "upload-win64": "node scripts/upload-win64.js"    
   },
   "repository": {
     "type": "git",
