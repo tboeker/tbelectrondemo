@@ -34,6 +34,9 @@ SET GH_DEMO=true
 #für upload.js Setzt das Token für die GitHub Auth.
 SET GH_TOKEN=XXX
 
+#password frü das win signing
+SET CERT_PASSWORD=Password
+
 export GH_TOKEN=XXX
 
 
