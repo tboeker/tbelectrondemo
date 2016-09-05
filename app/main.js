@@ -34,6 +34,8 @@ logger.info("appVersion", appVersion);
 logger.info("os", os.platform(), os.arch(), os.release(), os.type(), os.arch());
 
 
+/*
+
 const autoUpdater = require('autoUpdater');
 
 var feedUrl = 'http://localhost:6001/?version=' + app.getVersion();
@@ -59,10 +61,10 @@ autoUpdater.on('update-downloaded', function(x) {
   logger.info("autoupdater" , "update-downloaded")  
 });
 
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+logger.info("autoUpdater", "checkForUpdates")
+autoUpdater.checkForUpdates()
+*/
 
-/*
 const GhReleases = require('electron-gh-releases')
 
 let options = {
@@ -72,12 +74,17 @@ let options = {
 
 const updater = new GhReleases(options)
 
+
 // Check for updates
 // `status` returns true if there is a new update available
 updater.check((err, status) => {
+
+  logger.info("updater", status);
+
   if (!err && status) {
 
-    logger.info('updater.check. start download')
+
+    logger.info("updater", "updater.check. start download");
 
     // Download the update
     updater.download()    
@@ -97,10 +104,12 @@ updater.on('update-downloaded', (info) => {
 logger.info('start autoUpdater. currentVersion:' + app.getVersion())
  // Access electrons autoUpdater
  updater.autoUpdater
-*/
 
-logger.info("autoUpdater", "checkForUpdates")
-autoUpdater.checkForUpdates()
+
+// Module to create native browser window.
+const BrowserWindow = electron.BrowserWindow
+
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

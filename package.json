@@ -55,11 +55,11 @@
     }
   },
   "dependencies": {
-    "electron-gh-releases": "*",
+    "auto-updater": "*",
+    "electron-gh-releases": "^2.0.4",
     "electron-plugins": "^0.1.0",
     "electron-squirrel-startup": "*",
     "electron-updater": "^0.3.1",
-    "winston": "*",
-    "auto-updater" :"*"
+    "winston": "*"
   }
 }
