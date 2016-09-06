@@ -55,12 +55,9 @@
     }
   },
   "dependencies": {
-    "auto-updater": "*",
     "electron-gh-releases":  "*",
-    "electron-is-dev": "^0.1.2",
-    "electron-plugins": "^0.1.0",
+    "electron-is-dev": "*",
     "electron-squirrel-startup": "*",
-    "electron-updater": "^0.3.1",
     "winston": "*"
   }
 }
