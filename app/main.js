@@ -11,6 +11,8 @@ const app = electron.app;
 
 const isDev = require('electron-is-dev');
 
+
+
 if (isDev) {
     logger.info('Running in development');
 } else {
@@ -154,7 +156,7 @@ function createWindow() {
     logger.info('mainWindow', 'closed');
   });
  
- //nur in production auf updates prüfen
+ //nur in production auf updates prï¿½fen
  if ( ! isDev ) 
  {
   // Check for updates
