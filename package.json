@@ -2,6 +2,7 @@
   "name": "tbdemoelectron",
   "version": "1.0.37",
   "description": "tb demo electron",
+  "productName" : "TB Demo Electron",
   "scripts": {
     "postinstall": "install-app-deps",
     "clean": "rimraf dist",

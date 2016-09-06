@@ -229,7 +229,8 @@ function handleSquirrelEvent() {
   const appFolder = path.resolve(process.execPath, '..');
   const rootAtomFolder = path.resolve(appFolder, '..');
   const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
-  const exeName = path.basename(process.execPath);
+
+ // const exeName = 'TB Eletron' ; // path.basename(process.execPath);
 
   const spawn = function(command, args) {
     let spawnedProcess, error;
@@ -260,7 +261,7 @@ function handleSquirrelEvent() {
       //   explorer context menus
 
       // Install desktop and start menu shortcuts
-      spawnUpdate(['--createShortcut', exeName]);
+      spawnUpdate(['--createShortcut', app.getName()]);
 
       setTimeout(app.quit, 1000);
       return true;
@@ -270,7 +271,7 @@ function handleSquirrelEvent() {
       // --squirrel-updated handlers
 
       // Remove desktop and start menu shortcuts
-      spawnUpdate(['--removeShortcut', exeName]);
+      spawnUpdate(['--removeShortcut', app.getName()]);
 
       setTimeout(app.quit, 1000);
       return true;
