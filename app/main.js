@@ -1,6 +1,6 @@
 const logger = require('winston');
 logger.add(logger.transports.File, {
-  filename: "app.log"
+  filename: 'app.log'
 });
 
 global.logger = logger;
@@ -9,11 +9,20 @@ const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
 
-//app.setAppUserModelId("tb.demo.electron");
+const isDev = require('electron-is-dev');
+
+if (isDev) {
+    logger.info('Running in development');
+} else {
+    logger.info('Running in production');
+}
+
+
+//app.setAppUserModelId('tb.demo.electron');
 
 //https://medium.com/@svilen/auto-updating-apps-for-windows-and-osx-using-electron-the-complete-guide-4aa7a50b904c#.wpoukxnlq
 if (require('electron-squirrel-startup')) {
-  logger.info("electron-squirrel-startup. return");
+  logger.info('electron-squirrel-startup. return');
   return;
 }
 
@@ -21,135 +30,119 @@ if (require('electron-squirrel-startup')) {
 // this should be placed at top of main.js to handle setup events quickly
 if (handleSquirrelEvent()) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
-  logger.info("handleSquirrelEvent. return");
+  logger.info('handleSquirrelEvent. return');
   return;
 } else {
-  logger.info("no handleSquirrelEvent. continue");
+  logger.info('no handleSquirrelEvent. continue');
 }
 
 
 const appVersion = app.getVersion();
 const os = require('os');
 
-logger.info("appVersion", appVersion);
-logger.info("os", os.platform(), os.arch(), os.release(), os.type(), os.arch());
+logger.info('appVersion', appVersion);
+logger.info('os', os.platform(), os.arch(), os.release(), os.type(), os.arch());
 
+// Module to create native browser window.
+const BrowserWindow = electron.BrowserWindow;
 
-/*
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow;
 
-const autoUpdater = require('autoUpdater');
+    
 
-var feedUrl = 'http://localhost:6001/?version=' + app.getVersion();
-autoUpdater.setFeedURL("http://localhost:6001/");
+// ******************  GhReleases   ************************************  
 
-autoUpdater.on('error', function(err) {  
-  logger.info("error", err);
-});
-
-autoUpdater.on('checking-for-update', function() {  
-    logger.info("autoupdater" , "checking-for-update")
-});
-
-autoUpdater.on('update-available', function() {
-  logger.info("autoupdater" , "update-available")  
-});
-
-autoUpdater.on('update-not-available', function() {
-  logger.info("autoupdater" , "update-not-available")  
-});
-
-autoUpdater.on('update-downloaded', function(x) {
-  logger.info("autoupdater" , "update-downloaded")  
-});
-
-logger.info("autoUpdater", "checkForUpdates")
-autoUpdater.checkForUpdates()
-*/
-
-const GhReleases = require('electron-gh-releases')
+const GhReleases = require('electron-gh-releases');
 
 let options = {
   repo: 'tboeker/tbelectrondemo',
   currentVersion: app.getVersion()
-}
+};
 
-const updater = new GhReleases(options)
+const ghUpdater = new GhReleases(options);
 
+// Access electrons autoUpdater
+const autoUpdater = ghUpdater.autoUpdater;
 
-// Check for updates
-// `status` returns true if there is a new update available
-updater.check((err, status) => {
+// ******************  autoUpdater   ************************************  
 
-  logger.info("updater", status);
+/*
+const autoUpdater = require('electron').autoUpdater;
+//var feedUrl = 'http://localhost:6001/?version=' + app.getVersion();
+var feedUrl = 'http://localhost:6001';
+logger.info('autoUpdater', 'setFeedUrl', feedUrl);
+autoUpdater.setFeedURL(feedUrl);
+*/
 
-  if (!err && status) {
+autoUpdater.on('error', function(err) {  
+  logger.info('autoUpdater error', err);
+});
 
+autoUpdater.on('checking-for-update', function() {  
+    logger.info('autoUpdater' , 'checking-for-update');
+});
 
-    logger.info("updater", "updater.check. start download");
+autoUpdater.on('update-available', function() {
+  logger.info('autoUpdater' , 'update-available');  
+});
 
-    // Download the update
-    updater.download()
-  }
-})
+autoUpdater.on('update-not-available', function() {
+  logger.info('autoUpdater' , 'update-not-available'); 
+});
 
-// When an update has been downloaded
-updater.on('update-downloaded', (info) => {
+autoUpdater.on('update-downloaded', function(x) {
+  logger.info('autoUpdater' , 'update-downloaded');
+});
 
-  logger.info('updater-downloaded. start install')
+/*
+logger.info('autoUpdater', 'checkForUpdates')
+autoUpdater.checkForUpdates()
+*/
 
-  // Restart the app and install the update
-  updater.install()
-})
-
-
-logger.info('start autoUpdater. currentVersion:' + app.getVersion())
-  // Access electrons autoUpdater
-updater.autoUpdater
-
-
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
-
-
+// ******************  app   ************************************  
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
-    app.quit()
+    logger.info('app', 'window-all-closed' , 'app.quit');
+    app.quit();
   }
-})
+});
 
 app.on('activate', function() {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createWindow()
+    logger.info('app', 'activate' , 'createWindow');
+    createWindow();
   }
-})
+});
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+  const dialog = require('electron').dialog;
+
+// ******************  createWindow   ************************************  
 
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600
-  })
+  });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools();
 
 
   // Emitted when the window is closed.
@@ -157,10 +150,68 @@ function createWindow() {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null
-  })
+    mainWindow = null;
+    logger.info('mainWindow', 'closed');
+  });
+ 
+ //nur in production auf updates prüfen
+ if ( ! isDev ) 
+ {
+  // Check for updates
+  // `status` returns true if there is a new update available
+  ghUpdater.check((err, status) => {
+    logger.info('ghUpdater', status);
+  
+    if (err) {
+      logger.info('ghUpdater', 'error', err);
+    }
+    
+    if (!err && status) {
+      logger.info('ghUpdater', 'check' , status , 'should start download');
+        
+        let dlgOptions =  { type : 'question' , buttons :[ 'YES', 'NO' ]     , title :'Update available', message : 'An Update is available. Start Download?' , cancelId :1};
+    
+        dialog.showMessageBox( dlgOptions,   (result) => 
+        {
+          logger.info('dialog' , 'result' , result );
+
+          if (result == 0)
+          {
+            logger.info('ghUpdater' ,'download');
+            //Download the update
+            ghUpdater.download();
+          }
+        }
+    );
+  
+    
+    }
+  });
 }
 
+  // When an update has been downloaded
+  ghUpdater.on('update-downloaded', (info) => {
+    logger.info('ghUpdater', 'updater-downloaded', 'start install' , info);
+
+       let dlgOptions =  { type : 'question' , title :'Update downloaded', message : 'Starting Installation'};
+    
+        dialog.showMessageBox( dlgOptions,   (result) => 
+        {
+          logger.info('dialog' , 'result' , result );
+
+          if (result == 0)
+          {
+            logger.info('ghUpdater' ,'install');
+             // Restart the app and install the update
+            ghUpdater.install();
+          }
+        });
+  
+  });
+}
+
+
+// ******************  handleSquirrelEvent   ************************************  
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
@@ -186,7 +237,7 @@ function handleSquirrelEvent() {
         detached: true
       });
     } catch (error) {
-      logger.log('eror', error);
+      logger.log('spawn', 'error', error);
     }
     return spawnedProcess;
   };
@@ -196,6 +247,8 @@ function handleSquirrelEvent() {
   };
 
   const squirrelEvent = process.argv[1];
+  logger.info('handleSquirrelEvent', squirrelEvent)
+     
   switch (squirrelEvent) {
     case '--squirrel-install':
     case '--squirrel-updated':

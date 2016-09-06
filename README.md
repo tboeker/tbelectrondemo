@@ -69,3 +69,15 @@ Die Options in packages.json.build.win sind die gleichen wie in diesem projekt??
 https://github.com/unindented/electron-installer-windows
 
 electron-installer-windows --src dist/tbdemoelectron-win32-x64/ --dest dist/installers/ --remoteReleases dist/installers/ 
+
+
+## installation
+
+die dateien werden in den ordner installiert: 
+
+cd %LOCALAPPDATA%\tbdemoelectron 
+
+npm run pack-win
+xcopy dist\tbdemoelectron-win32-x64\*.* %LOCALAPPDATA%\tbdemoelectron\app-1.0.36 /Y /S
+%LOCALAPPDATA%\tbdemoelectron\app-1.0.36\tbdemoelectron.exe
+

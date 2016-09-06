@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "author": "TB",
   "description": "tb demo electron",
   "homepage": "https://github.com/tboeker/tbelectrondemo",
@@ -8,7 +8,8 @@
   "dependencies": {
     "winston": "*",
     "electron-squirrel-startup": "*",
-    "electron-gh-releases": "*"
+    "electron-gh-releases": "*",
+    "electron-is-dev": "*"
   },
   "devDependencies": {}
 }

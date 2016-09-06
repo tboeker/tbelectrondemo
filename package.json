@@ -1,6 +1,6 @@
 {
   "name": "tbdemoelectron",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "tb demo electron",
   "scripts": {
     "postinstall": "install-app-deps",
@@ -56,7 +56,8 @@
   },
   "dependencies": {
     "auto-updater": "*",
-    "electron-gh-releases": "^2.0.4",
+    "electron-gh-releases":  "*",
+    "electron-is-dev": "^0.1.2",
     "electron-plugins": "^0.1.0",
     "electron-squirrel-startup": "*",
     "electron-updater": "^0.3.1",
