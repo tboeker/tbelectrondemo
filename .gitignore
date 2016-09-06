@@ -3,3 +3,6 @@ dist*
 npm-debug.log*
 app.log
 .idea
+/bin
+/obj
+/.vs

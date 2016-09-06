@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>NodejsWebApp1</Name>
+    <RootNamespace>NodejsWebApp1</RootNamespace>
+    <NodeExePath>C:\Users\tb\Source\Repos\tbelectrondemo\node_modules\electron-prebuilt\dist\electron.exe</NodeExePath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>14ed7ccb-62f5-4e86-900f-3e92dcbada01</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app\main.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="app\index.html" />
+    <Content Include="app\node_modules\.bin\semver.cmd" />
+    <Content Include="app\node_modules\async\.jshintrc" />
+    <Content Include="app\node_modules\async\.travis.yml" />
+    <Content Include="app\node_modules\async\bower.json" />
+    <Content Include="app\node_modules\async\CHANGELOG.md" />
+    <Content Include="app\node_modules\async\component.json" />
+    <Content Include="app\node_modules\async\LICENSE" />
+    <Content Include="app\node_modules\async\package.json" />
+    <Content Include="app\node_modules\async\README.md" />
+    <Content Include="app\node_modules\buffer-shims\license.md" />
+    <Content Include="app\node_modules\buffer-shims\package.json" />
+    <Content Include="app\node_modules\buffer-shims\readme.md" />
+    <Content Include="app\node_modules\capture-stack-trace\package.json" />
+    <Content Include="app\node_modules\capture-stack-trace\readme.md" />
+    <Content Include="app\node_modules\colors\.travis.yml" />
+    <Content Include="app\node_modules\colors\MIT-LICENSE.txt" />
+    <Content Include="app\node_modules\colors\package.json" />
+    <Content Include="app\node_modules\colors\ReadMe.md" />
+    <Content Include="app\node_modules\colors\screenshots\colors.png" />
+    <Content Include="app\node_modules\core-util-is\float.patch" />
+    <Content Include="app\node_modules\core-util-is\LICENSE" />
+    <Content Include="app\node_modules\core-util-is\package.json" />
+    <Content Include="app\node_modules\core-util-is\README.md" />
+    <Content Include="app\node_modules\create-error-class\license" />
+    <Content Include="app\node_modules\create-error-class\package.json" />
+    <Content Include="app\node_modules\create-error-class\readme.md" />
+    <Content Include="app\node_modules\cycle\package.json" />
+    <Content Include="app\node_modules\cycle\README.md" />
+    <Content Include="app\node_modules\debug\.jshintrc" />
+    <Content Include="app\node_modules\debug\.npmignore" />
+    <Content Include="app\node_modules\debug\bower.json" />
+    <Content Include="app\node_modules\debug\component.json" />
+    <Content Include="app\node_modules\debug\History.md" />
+    <Content Include="app\node_modules\debug\Makefile" />
+    <Content Include="app\node_modules\debug\package.json" />
+    <Content Include="app\node_modules\debug\Readme.md" />
+    <Content Include="app\node_modules\duplexer2\LICENSE.md" />
+    <Content Include="app\node_modules\duplexer2\package.json" />
+    <Content Include="app\node_modules\duplexer2\README.md" />
+    <Content Include="app\node_modules\electron-gh-releases\.babelrc" />
+    <Content Include="app\node_modules\electron-gh-releases\.npmignore" />
+    <Content Include="app\node_modules\electron-gh-releases\.travis.yml" />
+    <Content Include="app\node_modules\electron-gh-releases\docs\1.x\api-and-usage.md" />
+    <Content Include="app\node_modules\electron-gh-releases\docs\2.x\api.md" />
+    <Content Include="app\node_modules\electron-gh-releases\docs\2.x\how-to.md" />
+    <Content Include="app\node_modules\electron-gh-releases\LICENSE.md" />
+    <Content Include="app\node_modules\electron-gh-releases\package.json" />
+    <Content Include="app\node_modules\electron-gh-releases\README.md" />
+    <Content Include="app\node_modules\electron-gh-releases\test\app\package.json" />
+    <Content Include="app\node_modules\electron-is-dev\license" />
+    <Content Include="app\node_modules\electron-is-dev\package.json" />
+    <Content Include="app\node_modules\electron-is-dev\readme.md" />
+    <Content Include="app\node_modules\electron-squirrel-startup\.eslintrc" />
+    <Content Include="app\node_modules\electron-squirrel-startup\.jsfmtrc" />
+    <Content Include="app\node_modules\electron-squirrel-startup\.npmignore" />
+    <Content Include="app\node_modules\electron-squirrel-startup\.travis.yml" />
+    <Content Include="app\node_modules\electron-squirrel-startup\appveyor.yml" />
+    <Content Include="app\node_modules\electron-squirrel-startup\LICENSE" />
+    <Content Include="app\node_modules\electron-squirrel-startup\package.json" />
+    <Content Include="app\node_modules\electron-squirrel-startup\README.md" />
+    <Content Include="app\node_modules\electron-squirrel-startup\test\mocha.opts" />
+    <Content Include="app\node_modules\error-ex\LICENSE" />
+    <Content Include="app\node_modules\error-ex\package.json" />
+    <Content Include="app\node_modules\error-ex\README.md" />
+    <Content Include="app\node_modules\eyes\LICENSE" />
+    <Content Include="app\node_modules\eyes\Makefile" />
+    <Content Include="app\node_modules\eyes\package.json" />
+    <Content Include="app\node_modules\eyes\README.md" />
+    <Content Include="app\node_modules\got\license" />
+    <Content Include="app\node_modules\got\package.json" />
+    <Content Include="app\node_modules\got\readme.md" />
+    <Content Include="app\node_modules\inherits\LICENSE" />
+    <Content Include="app\node_modules\inherits\package.json" />
+    <Content Include="app\node_modules\inherits\README.md" />
+    <Content Include="app\node_modules\is-arrayish\.editorconfig" />
+    <Content Include="app\node_modules\is-arrayish\.istanbul.yml" />
+    <Content Include="app\node_modules\is-arrayish\.npmignore" />
+    <Content Include="app\node_modules\is-arrayish\.travis.yml" />
+    <Content Include="app\node_modules\is-arrayish\LICENSE" />
+    <Content Include="app\node_modules\is-arrayish\package.json" />
+    <Content Include="app\node_modules\is-arrayish\README.md" />
+    <Content Include="app\node_modules\is-plain-obj\license" />
+    <Content Include="app\node_modules\is-plain-obj\package.json" />
+    <Content Include="app\node_modules\is-plain-obj\readme.md" />
+    <Content Include="app\node_modules\is-redirect\license" />
+    <Content Include="app\node_modules\is-redirect\package.json" />
+    <Content Include="app\node_modules\is-redirect\readme.md" />
+    <Content Include="app\node_modules\is-retry-allowed\license" />
+    <Content Include="app\node_modules\is-retry-allowed\package.json" />
+    <Content Include="app\node_modules\is-retry-allowed\readme.md" />
+    <Content Include="app\node_modules\is-stream\license" />
+    <Content Include="app\node_modules\is-stream\package.json" />
+    <Content Include="app\node_modules\is-stream\readme.md" />
+    <Content Include="app\node_modules\isarray\.npmignore" />
+    <Content Include="app\node_modules\isarray\.travis.yml" />
+    <Content Include="app\node_modules\isarray\component.json" />
+    <Content Include="app\node_modules\isarray\Makefile" />
+    <Content Include="app\node_modules\isarray\package.json" />
+    <Content Include="app\node_modules\isarray\README.md" />
+    <Content Include="app\node_modules\isstream\.jshintrc" />
+    <Content Include="app\node_modules\isstream\.npmignore" />
+    <Content Include="app\node_modules\isstream\.travis.yml" />
+    <Content Include="app\node_modules\isstream\LICENSE.md" />
+    <Content Include="app\node_modules\isstream\package.json" />
+    <Content Include="app\node_modules\isstream\README.md" />
+    <Content Include="app\node_modules\lowercase-keys\package.json" />
+    <Content Include="app\node_modules\lowercase-keys\readme.md" />
+    <Content Include="app\node_modules\ms\.npmignore" />
+    <Content Include="app\node_modules\ms\History.md" />
+    <Content Include="app\node_modules\ms\LICENSE" />
+    <Content Include="app\node_modules\ms\package.json" />
+    <Content Include="app\node_modules\ms\README.md" />
+    <Content Include="app\node_modules\node-status-codes\license" />
+    <Content Include="app\node_modules\node-status-codes\package.json" />
+    <Content Include="app\node_modules\node-status-codes\readme.md" />
+    <Content Include="app\node_modules\object-assign\license" />
+    <Content Include="app\node_modules\object-assign\package.json" />
+    <Content Include="app\node_modules\object-assign\readme.md" />
+    <Content Include="app\node_modules\parse-json\license" />
+    <Content Include="app\node_modules\parse-json\package.json" />
+    <Content Include="app\node_modules\parse-json\readme.md" />
+    <Content Include="app\node_modules\pinkie-promise\license" />
+    <Content Include="app\node_modules\pinkie-promise\package.json" />
+    <Content Include="app\node_modules\pinkie-promise\readme.md" />
+    <Content Include="app\node_modules\pinkie\license" />
+    <Content Include="app\node_modules\pinkie\package.json" />
+    <Content Include="app\node_modules\pinkie\readme.md" />
+    <Content Include="app\node_modules\pkginfo\.npmignore" />
+    <Content Include="app\node_modules\pkginfo\docs\docco.css" />
+    <Content Include="app\node_modules\pkginfo\docs\pkginfo.html" />
+    <Content Include="app\node_modules\pkginfo\examples\package.json" />
+    <Content Include="app\node_modules\pkginfo\examples\subdir\package.json" />
+    <Content Include="app\node_modules\pkginfo\LICENSE" />
+    <Content Include="app\node_modules\pkginfo\package.json" />
+    <Content Include="app\node_modules\pkginfo\README.md" />
+    <Content Include="app\node_modules\prepend-http\license" />
+    <Content Include="app\node_modules\prepend-http\package.json" />
+    <Content Include="app\node_modules\prepend-http\readme.md" />
+    <Content Include="app\node_modules\process-nextick-args\.travis.yml" />
+    <Content Include="app\node_modules\process-nextick-args\license.md" />
+    <Content Include="app\node_modules\process-nextick-args\package.json" />
+    <Content Include="app\node_modules\process-nextick-args\readme.md" />
+    <Content Include="app\node_modules\read-all-stream\license" />
+    <Content Include="app\node_modules\read-all-stream\package.json" />
+    <Content Include="app\node_modules\read-all-stream\readme.md" />
+    <Content Include="app\node_modules\readable-stream\.npmignore" />
+    <Content Include="app\node_modules\readable-stream\.travis.yml" />
+    <Content Include="app\node_modules\readable-stream\doc\stream.md" />
+    <Content Include="app\node_modules\readable-stream\doc\wg-meetings\2015-01-30.md" />
+    <Content Include="app\node_modules\readable-stream\LICENSE" />
+    <Content Include="app\node_modules\readable-stream\package.json" />
+    <Content Include="app\node_modules\readable-stream\README.md" />
+    <Content Include="app\node_modules\semver\bin\semver" />
+    <Content Include="app\node_modules\semver\LICENSE" />
+    <Content Include="app\node_modules\semver\package.json" />
+    <Content Include="app\node_modules\semver\range.bnf" />
+    <Content Include="app\node_modules\semver\README.md" />
+    <Content Include="app\node_modules\stack-trace\.npmignore" />
+    <Content Include="app\node_modules\stack-trace\License" />
+    <Content Include="app\node_modules\stack-trace\Makefile" />
+    <Content Include="app\node_modules\stack-trace\package.json" />
+    <Content Include="app\node_modules\stack-trace\Readme.md" />
+    <Content Include="app\node_modules\string_decoder\.npmignore" />
+    <Content Include="app\node_modules\string_decoder\LICENSE" />
+    <Content Include="app\node_modules\string_decoder\package.json" />
+    <Content Include="app\node_modules\string_decoder\README.md" />
+    <Content Include="app\node_modules\timed-out\package.json" />
+    <Content Include="app\node_modules\timed-out\readme.md" />
+    <Content Include="app\node_modules\unzip-response\license" />
+    <Content Include="app\node_modules\unzip-response\package.json" />
+    <Content Include="app\node_modules\unzip-response\readme.md" />
+    <Content Include="app\node_modules\url-parse-lax\license" />
+    <Content Include="app\node_modules\url-parse-lax\package.json" />
+    <Content Include="app\node_modules\url-parse-lax\readme.md" />
+    <Content Include="app\node_modules\util-deprecate\History.md" />
+    <Content Include="app\node_modules\util-deprecate\LICENSE" />
+    <Content Include="app\node_modules\util-deprecate\package.json" />
+    <Content Include="app\node_modules\util-deprecate\README.md" />
+    <Content Include="app\node_modules\winston\CHANGELOG.md" />
+    <Content Include="app\node_modules\winston\LICENSE" />
+    <Content Include="app\node_modules\winston\package.json" />
+    <Content Include="app\node_modules\winston\README.md" />
+    <Content Include="app\package.json" />
+    <Content Include="build\icon.icns" />
+    <Content Include="build\icon.ico" />
+    <Content Include="build\icon.png" />
+    <Content Include="build\install-spinner.gif" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="resources\icon.icns" />
+    <Content Include="resources\icon.ico" />
+    <Content Include="resources\icon.png" />
+    <Content Include="resources\IconBlackTemplate%402x.png" />
+    <Content Include="resources\IconBlackTemplate.png" />
+    <Content Include="resources\IconWhiteTemplate%402x.png" />
+    <Content Include="resources\IconWhiteTemplate.png" />
+    <Content Include="resources\install-spinner.gif" />
+    <Content Include="scripts\createcert.cmd" />
+    <Content Include="scripts\makecert.exe" />
+    <Content Include="scripts\pvk2pfx.exe" />
+    <Content Include="tbdemoelectron.pfx" />
+    <Content Include="test.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\node_modules\async\" />
+    <Folder Include="app\node_modules\async\lib\" />
+    <Folder Include="app\node_modules\async\support\" />
+    <Folder Include="app\node_modules\buffer-shims\" />
+    <Folder Include="app\node_modules\capture-stack-trace\" />
+    <Folder Include="app\node_modules\colors\" />
+    <Folder Include="app\node_modules\colors\examples\" />
+    <Folder Include="app\node_modules\colors\lib\" />
+    <Folder Include="app\node_modules\colors\lib\custom\" />
+    <Folder Include="app\node_modules\colors\lib\maps\" />
+    <Folder Include="app\node_modules\colors\lib\system\" />
+    <Folder Include="app\node_modules\colors\screenshots\" />
+    <Folder Include="app\node_modules\colors\tests\" />
+    <Folder Include="app\node_modules\colors\themes\" />
+    <Folder Include="app\node_modules\core-util-is\" />
+    <Folder Include="app\node_modules\core-util-is\lib\" />
+    <Folder Include="app\node_modules\create-error-class\" />
+    <Folder Include="app\node_modules\cycle\" />
+    <Folder Include="app\node_modules\debug\" />
+    <Folder Include="app\node_modules\duplexer2\" />
+    <Folder Include="app\node_modules\electron-gh-releases\" />
+    <Folder Include="app\node_modules\electron-gh-releases\docs\" />
+    <Folder Include="app\node_modules\electron-gh-releases\docs\1.x\" />
+    <Folder Include="app\node_modules\electron-gh-releases\docs\2.x\" />
+    <Folder Include="app\node_modules\electron-gh-releases\src\" />
+    <Folder Include="app\node_modules\electron-gh-releases\test\" />
+    <Folder Include="app\node_modules\electron-gh-releases\test\app\" />
+    <Folder Include="app\node_modules\electron-is-dev\" />
+    <Folder Include="app\node_modules\electron-squirrel-startup\" />
+    <Folder Include="app\node_modules\electron-squirrel-startup\test\" />
+    <Folder Include="app\node_modules\error-ex\" />
+    <Folder Include="app\node_modules\eyes\" />
+    <Folder Include="app\node_modules\eyes\lib\" />
+    <Folder Include="app\node_modules\eyes\test\" />
+    <Folder Include="app\node_modules\got\" />
+    <Folder Include="app\node_modules\inherits\" />
+    <Folder Include="app\node_modules\is-arrayish\" />
+    <Folder Include="app\node_modules\is-plain-obj\" />
+    <Folder Include="app\node_modules\is-redirect\" />
+    <Folder Include="app\node_modules\is-retry-allowed\" />
+    <Folder Include="app\node_modules\is-stream\" />
+    <Folder Include="app\node_modules\isarray\" />
+    <Folder Include="app\node_modules\isstream\" />
+    <Folder Include="app\node_modules\lowercase-keys\" />
+    <Folder Include="app\node_modules\ms\" />
+    <Folder Include="app\node_modules\node-status-codes\" />
+    <Folder Include="app\node_modules\object-assign\" />
+    <Folder Include="app\node_modules\parse-json\" />
+    <Folder Include="app\node_modules\parse-json\vendor\" />
+    <Folder Include="app\node_modules\pinkie-promise\" />
+    <Folder Include="app\node_modules\pinkie\" />
+    <Folder Include="app\node_modules\pkginfo\" />
+    <Folder Include="app\node_modules\pkginfo\docs\" />
+    <Folder Include="app\node_modules\pkginfo\examples\" />
+    <Folder Include="app\node_modules\pkginfo\examples\subdir\" />
+    <Folder Include="app\node_modules\pkginfo\lib\" />
+    <Folder Include="app\node_modules\pkginfo\test\" />
+    <Folder Include="app\node_modules\prepend-http\" />
+    <Folder Include="app\node_modules\process-nextick-args\" />
+    <Folder Include="app\node_modules\read-all-stream\" />
+    <Folder Include="app\node_modules\readable-stream\" />
+    <Folder Include="app\node_modules\readable-stream\doc\" />
+    <Folder Include="app\node_modules\readable-stream\doc\wg-meetings\" />
+    <Folder Include="app\node_modules\readable-stream\lib\" />
+    <Folder Include="app\node_modules\readable-stream\lib\internal\" />
+    <Folder Include="app\node_modules\readable-stream\lib\internal\streams\" />
+    <Folder Include="app\node_modules\semver\" />
+    <Folder Include="app\node_modules\semver\bin\" />
+    <Folder Include="app\node_modules\stack-trace\" />
+    <Folder Include="app\node_modules\stack-trace\lib\" />
+    <Folder Include="app\node_modules\string_decoder\" />
+    <Folder Include="app\node_modules\timed-out\" />
+    <Folder Include="app\node_modules\unzip-response\" />
+    <Folder Include="app\node_modules\url-parse-lax\" />
+    <Folder Include="app\node_modules\util-deprecate\" />
+    <Folder Include="app\node_modules\winston\" />
+    <Folder Include="app\node_modules\winston\lib\" />
+    <Folder Include="app\node_modules\winston\lib\winston\" />
+    <Folder Include="app\node_modules\winston\lib\winston\config\" />
+    <Folder Include="app\node_modules\winston\lib\winston\transports\" />
+    <Folder Include="app\node_modules\winston\test\" />
+    <Folder Include="app\node_modules\winston\test\transports\" />
+    <Folder Include="build\" />
+    <Folder Include="resources\" />
+    <Folder Include="scripts\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\electron-builder\" />
+    <Folder Include="typings\globals\electron-packager\" />
+    <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\rimraf\" />
+    <Folder Include="typings\globals\winston\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app\main.js" />
+    <Compile Include="app\node_modules\async\lib\async.js" />
+    <Compile Include="app\node_modules\async\support\sync-package-managers.js" />
+    <Compile Include="app\node_modules\buffer-shims\index.js" />
+    <Compile Include="app\node_modules\capture-stack-trace\index.js" />
+    <Compile Include="app\node_modules\colors\examples\normal-usage.js" />
+    <Compile Include="app\node_modules\colors\examples\safe-string.js" />
+    <Compile Include="app\node_modules\colors\lib\colors.js" />
+    <Compile Include="app\node_modules\colors\lib\custom\trap.js" />
+    <Compile Include="app\node_modules\colors\lib\custom\zalgo.js" />
+    <Compile Include="app\node_modules\colors\lib\extendStringPrototype.js" />
+    <Compile Include="app\node_modules\colors\lib\index.js" />
+    <Compile Include="app\node_modules\colors\lib\maps\america.js" />
+    <Compile Include="app\node_modules\colors\lib\maps\rainbow.js" />
+    <Compile Include="app\node_modules\colors\lib\maps\random.js" />
+    <Compile Include="app\node_modules\colors\lib\maps\zebra.js" />
+    <Compile Include="app\node_modules\colors\lib\styles.js" />
+    <Compile Include="app\node_modules\colors\lib\system\supports-colors.js" />
+    <Compile Include="app\node_modules\colors\safe.js" />
+    <Compile Include="app\node_modules\colors\tests\basic-test.js" />
+    <Compile Include="app\node_modules\colors\tests\safe-test.js" />
+    <Compile Include="app\node_modules\colors\themes\generic-logging.js" />
+    <Compile Include="app\node_modules\core-util-is\lib\util.js" />
+    <Compile Include="app\node_modules\core-util-is\test.js" />
+    <Compile Include="app\node_modules\create-error-class\index.js" />
+    <Compile Include="app\node_modules\cycle\cycle.js" />
+    <Compile Include="app\node_modules\debug\browser.js" />
+    <Compile Include="app\node_modules\debug\debug.js" />
+    <Compile Include="app\node_modules\debug\node.js" />
+    <Compile Include="app\node_modules\duplexer2\index.js" />
+    <Compile Include="app\node_modules\electron-gh-releases\GhReleases.js" />
+    <Compile Include="app\node_modules\electron-gh-releases\gulpfile.js" />
+    <Compile Include="app\node_modules\electron-gh-releases\src\GhReleases.js" />
+    <Compile Include="app\node_modules\electron-gh-releases\test\app\main.js" />
+    <Compile Include="app\node_modules\electron-gh-releases\test\test.js" />
+    <Compile Include="app\node_modules\electron-is-dev\index.js" />
+    <Compile Include="app\node_modules\electron-squirrel-startup\index.js" />
+    <Compile Include="app\node_modules\electron-squirrel-startup\test\index.test.js" />
+    <Compile Include="app\node_modules\error-ex\index.js" />
+    <Compile Include="app\node_modules\eyes\lib\eyes.js" />
+    <Compile Include="app\node_modules\eyes\test\eyes-test.js" />
+    <Compile Include="app\node_modules\got\index.js" />
+    <Compile Include="app\node_modules\inherits\inherits.js" />
+    <Compile Include="app\node_modules\inherits\inherits_browser.js" />
+    <Compile Include="app\node_modules\inherits\test.js" />
+    <Compile Include="app\node_modules\is-arrayish\index.js" />
+    <Compile Include="app\node_modules\is-plain-obj\index.js" />
+    <Compile Include="app\node_modules\is-redirect\index.js" />
+    <Compile Include="app\node_modules\is-retry-allowed\index.js" />
+    <Compile Include="app\node_modules\is-stream\index.js" />
+    <Compile Include="app\node_modules\isarray\index.js" />
+    <Compile Include="app\node_modules\isarray\test.js" />
+    <Compile Include="app\node_modules\isstream\isstream.js" />
+    <Compile Include="app\node_modules\isstream\test.js" />
+    <Compile Include="app\node_modules\lowercase-keys\index.js" />
+    <Compile Include="app\node_modules\ms\index.js" />
+    <Compile Include="app\node_modules\node-status-codes\index.js" />
+    <Compile Include="app\node_modules\object-assign\index.js" />
+    <Compile Include="app\node_modules\parse-json\index.js" />
+    <Compile Include="app\node_modules\parse-json\vendor\parse.js" />
+    <Compile Include="app\node_modules\parse-json\vendor\unicode.js" />
+    <Compile Include="app\node_modules\pinkie-promise\index.js" />
+    <Compile Include="app\node_modules\pinkie\index.js" />
+    <Compile Include="app\node_modules\pkginfo\examples\all-properties.js" />
+    <Compile Include="app\node_modules\pkginfo\examples\array-argument.js" />
+    <Compile Include="app\node_modules\pkginfo\examples\multiple-properties.js" />
+    <Compile Include="app\node_modules\pkginfo\examples\object-argument.js" />
+    <Compile Include="app\node_modules\pkginfo\examples\single-property.js" />
+    <Compile Include="app\node_modules\pkginfo\examples\target-dir.js" />
+    <Compile Include="app\node_modules\pkginfo\lib\pkginfo.js" />
+    <Compile Include="app\node_modules\pkginfo\test\pkginfo-test.js" />
+    <Compile Include="app\node_modules\prepend-http\index.js" />
+    <Compile Include="app\node_modules\process-nextick-args\index.js" />
+    <Compile Include="app\node_modules\process-nextick-args\test.js" />
+    <Compile Include="app\node_modules\read-all-stream\index.js" />
+    <Compile Include="app\node_modules\readable-stream\duplex.js" />
+    <Compile Include="app\node_modules\readable-stream\lib\internal\streams\BufferList.js" />
+    <Compile Include="app\node_modules\readable-stream\lib\_stream_duplex.js" />
+    <Compile Include="app\node_modules\readable-stream\lib\_stream_passthrough.js" />
+    <Compile Include="app\node_modules\readable-stream\lib\_stream_readable.js" />
+    <Compile Include="app\node_modules\readable-stream\lib\_stream_transform.js" />
+    <Compile Include="app\node_modules\readable-stream\lib\_stream_writable.js" />
+    <Compile Include="app\node_modules\readable-stream\passthrough.js" />
+    <Compile Include="app\node_modules\readable-stream\readable.js" />
+    <Compile Include="app\node_modules\readable-stream\transform.js" />
+    <Compile Include="app\node_modules\readable-stream\writable.js" />
+    <Compile Include="app\node_modules\semver\semver.js" />
+    <Compile Include="app\node_modules\stack-trace\lib\stack-trace.js" />
+    <Compile Include="app\node_modules\string_decoder\index.js" />
+    <Compile Include="app\node_modules\timed-out\index.js" />
+    <Compile Include="app\node_modules\unzip-response\index.js" />
+    <Compile Include="app\node_modules\url-parse-lax\index.js" />
+    <Compile Include="app\node_modules\util-deprecate\browser.js" />
+    <Compile Include="app\node_modules\util-deprecate\node.js" />
+    <Compile Include="app\node_modules\winston\lib\winston.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\common.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\config.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\config\cli-config.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\config\npm-config.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\config\syslog-config.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\container.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\exception.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\logger.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\transports.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\transports\console.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\transports\file.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\transports\http.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\transports\memory.js" />
+    <Compile Include="app\node_modules\winston\lib\winston\transports\transport.js" />
+    <Compile Include="app\node_modules\winston\test\helpers.js" />
+    <Compile Include="app\node_modules\winston\test\transports\console-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-archive-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-maxfiles-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-maxsize-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-open-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-stress-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-tailrolling-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\file-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\http-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\memory-test.js" />
+    <Compile Include="app\node_modules\winston\test\transports\transport.js" />
+    <Compile Include="app\renderer.js" />
+    <Compile Include="scripts\pack-win.js" />
+    <Compile Include="scripts\upload-win64.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typings\globals\electron-builder\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\electron-packager\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\rimraf\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\winston\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
