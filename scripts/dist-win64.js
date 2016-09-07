@@ -13,7 +13,7 @@ if (!process.env.CERT_PASSWORD) {
 }
 
 var remoteReleases = 'https://github.com/tboeker/tbelectrondemo';
-if (!process.env.GH_REPO)
+if (process.env.GH_REPO)
 {
     console.log('remoteReleases', process.env.GH_REPO);
     remoteReleases = process.env.GH_REPO;
