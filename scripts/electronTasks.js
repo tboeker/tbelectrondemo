@@ -52,7 +52,8 @@ module.exports.createWinstaller = function (opts, callback) {
         certificateFile: certificateFile,
         certificatePassword: certificatePassword,
         remoteToken: process.env.GH_TOKEN || '',
-        remoteReleases: remoteReleases
+        remoteReleases: remoteReleases,
+        version :  module.exports.version
     };
 
     console.log('::createWinstaller: options:', options);
