@@ -8,7 +8,7 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "echo running build..",
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "echo running tests.. && exit 0",
     "compile": "npm run build && npm test",
     "preversion": "npm run compile",
     "postversion": "git push && git push --tags",
@@ -36,7 +36,7 @@
     "demo",
     "tb"
   ],
-  "author": "TB",
+  "author": "TB",  
   "bugs": {
     "url": "https://github.com/tboeker/tbelectrondemo/issues"
   },
@@ -68,7 +68,8 @@
     "appDirectory": "./app",
     "appCopyright": "2016 (C) TB",
     "companyName": "TB CompanyName",
-    "electron": {}
+    "releaseRepoOwner": "tboeker",
+    "releaseRepo" : "tbdemoelectron"
   },
   "dependencies": {
     "electron-gh-releases": "*",

@@ -5,23 +5,27 @@ var build = module.exports.build;
 
 var options = {
     platform: 'win32',
-    arch: 'x64,ia32'
+    arch: 'x64'
 };
 
 
 tasks.packElectron(options,
+
     function (err) {
         if (err) {
             console.error(err);
             throw err;
         }
 
-        options.arch = 'x64';
+        console.log(':packElectron: createWinstaller')       
+        
         tasks.createWinstaller(options, function (err) {
             if (err) {
                 console.error(err);
                 throw err;
             }
+
+            console.log(':packElectron: succeeded')
         }
 
         );

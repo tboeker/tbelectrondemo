@@ -1,7 +1,7 @@
 {
   "name": "tbdemoelectron",
   "version": "1.0.39",
-  "main": "main.js",
+  "main": "main.js", 
   "dependencies": {
     "electron-gh-releases": "*",
     "electron-is-dev": "*",

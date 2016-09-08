@@ -1,7 +1,7 @@
 const packager = require('electron-packager');
 const winstaller = require('electron-winstaller');
 
-const pkginfo = require('pkginfo')(module, 'version', 'name', 'build', 'productName');
+const pkginfo = require('pkginfo')(module, 'version', 'name', 'build', 'productName', 'author', 'description');
 const assert = require('assert');
 
 var build = module.exports.build;
@@ -32,19 +32,20 @@ module.exports.createWinstaller = function (opts, callback) {
         certificateFile = '';
     }
 
-    var remoteReleases = 'https://github.com/tboeker/tbelectrondemo';
+    var remoteReleases = '';//https://github.com/tboeker/tbelectrondemo';
     if (process.env.GH_REPO) {
         console.log('remoteReleases', process.env.GH_REPO);
         remoteReleases = process.env.GH_REPO;
     }
 
     var options = {
-      
-        appDirectory: build.outDirectory + '/' + module.exports.name + opts.platform + '/' + opts.arch,
+        appDirectory: build.outDirectory + '/' + module.exports.name + '-' + opts.platform + '-' + opts.arch,
         outputDirectory: build.outDirectory + '/installer/' + opts.platform + '-' + opts.arch,
         loadingGif: build.win.loadingGif,
         setupIcon: build.win.setupIcon,
         iconUrl: build.win.iconUrl,
+        authors: module.exports.author,
+        description: module.exports.description,
         setupExe: exe,
         noMsi: true,
         certificateFile: certificateFile,
@@ -61,11 +62,11 @@ module.exports.createWinstaller = function (opts, callback) {
         console.log('::createWinstaller:setup created')
 
         if (callback) {
-            if (err)
-                callback(err);
             callback(undefined);
         }
-    }, (err) => console.log(`No dice: ${err.message}`));
+    }, (err) => {
+        if (callback) callback(err)
+    });
 
 
 }

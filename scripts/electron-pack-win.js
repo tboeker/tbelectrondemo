@@ -5,7 +5,7 @@ var build = module.exports.build;
 
 var options = {   
     platform: 'win32',
-    arch: 'x64'
+    arch: 'x32,x64'
 };
 
 tasks.packElectron(options);
