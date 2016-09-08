@@ -13,9 +13,9 @@ var uploadOptions = {
         "dist/**/*{version}*"
     ],
     repoOwner: build.releaseRepoOwner,
-    repoName: build.releaseRepoWin64,
+    repoName: build.releaseRepoWin32,
     platform: 'win32',
-    arch: 'x64'
+    arch: 'ia32'
 };
 
 tasks.uploadFiles(uploadOptions);

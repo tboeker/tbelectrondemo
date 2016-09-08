@@ -9,7 +9,8 @@ var build = module.exports.build;
 module.exports.options = function () {
     return {
         platform: 'platform: win32',
-        arch: 'architectur: x64,ia32'
+        arch: 'architectur: x64,ia32',
+        appIconPath : 'app icon'
     };
 }
 
@@ -84,7 +85,7 @@ module.exports.packElectron = function (opts, callback) {
         platform: opts.platform,
         arch: opts.arch,
         overwrite: true,
-        icon: build.appIconPath,
+        icon: opts.appIconPath,
         'app-copyright': build.appCopyright,
         'build-version': module.exports.version,
         win32metadata: {

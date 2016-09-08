@@ -5,7 +5,7 @@ var build = module.exports.build;
 
 var options = {
     platform: 'win32',
-    arch: 'x64',
+    arch: 'ia32',
     appIconPath: build.win.appIconPath
 };
 

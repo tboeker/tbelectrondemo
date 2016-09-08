@@ -5,7 +5,8 @@ var build = module.exports.build;
 
 var options = {   
     platform: 'win32',
-    arch: 'x32,x64'
+    arch: 'ia32,x64',
+    appIconPath :  build.win.appIconPath
 };
 
 tasks.packElectron(options);
