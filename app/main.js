@@ -19,9 +19,6 @@ if (isDev) {
     logger.info('Running in production');
 }
 
-
-//app.setAppUserModelId('tb.demo.electron');
-
 //https://medium.com/@svilen/auto-updating-apps-for-windows-and-osx-using-electron-the-complete-guide-4aa7a50b904c#.wpoukxnlq
 if (require('electron-squirrel-startup')) {
   logger.info('electron-squirrel-startup. return');

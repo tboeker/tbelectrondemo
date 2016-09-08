@@ -11,17 +11,23 @@ npm install
 #run the app
 npm start
 
-#build windows
-npm run dist-win64
+#build windows x64
+npm run electron:dist:win64
 
-#upload windows to github
-npm run upload-win64
+#upload windows x64 to github
+electron:upload:win64
 
 #create patch release
-npm run release-patch
+npm run release:patch
 
-#build osx
-npm run dist-osx
+#create minor release
+npm run release:minor
+
+#create major release
+npm run release:major
+
+
+
 
 ```
 ## Parameter 
@@ -38,7 +44,6 @@ SET GH_TOKEN=XXX
 SET CERT_PASSWORD=Password
 
 export GH_TOKEN=XXX
-
 
 
 ``` 
