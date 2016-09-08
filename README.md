@@ -17,6 +17,12 @@ npm run electron:dist:win64
 #upload windows x64 to github
 npm run electron:upload:win64
 
+#build windows x32
+npm run electron:dist:win32
+
+#upload windows x32 to github
+npm run electron:upload:win32
+
 #create patch release
 npm run release:patch
 

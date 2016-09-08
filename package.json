@@ -23,7 +23,9 @@
     "dev": "SET NODE_ENV=development && npm run start",
     "electron:pack:win": "npm run compile && node scripts/electron-pack-win.js",
     "electron:dist:win64": "node scripts/electron-dist-win64.js",
-    "electron:upload:win64": "node scripts/electron-upload-win64.js"
+    "electron:upload:win64": "node scripts/electron-upload-win64.js",
+    "electron:dist:win32": "node scripts/electron-dist-win32.js",
+    "electron:upload:win32": "node scripts/electron-upload-win32.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,7 @@
     "demo",
     "tb"
   ],
-  "author": "TB",  
+  "author": "TB",
   "bugs": {
     "url": "https://github.com/tboeker/tbelectrondemo/issues"
   },
@@ -69,8 +71,8 @@
     "appCopyright": "2016 (C) TB",
     "companyName": "TB CompanyName",
     "releaseRepoOwner": "tboeker",
-    "releaseRepoWin64" : "tbdemoelectron-win64",
-    "releaseRepoWin32" : "tbdemoelectron-win32"
+    "releaseRepoWin64": "tbdemoelectron-win64",
+    "releaseRepoWin32": "tbdemoelectron-win32"
   },
   "dependencies": {
     "electron-gh-releases": "*",
